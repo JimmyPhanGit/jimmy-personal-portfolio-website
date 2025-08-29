@@ -128,7 +128,6 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-<<<<<<< HEAD
 }
 
 html::-webkit-scrollbar {
@@ -147,6 +146,4 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-thumb:hover {
   background-color: #5c5c5e;
-=======
->>>>>>> parent of a81325c (Implemented scroll bar)
 }
