@@ -37,7 +37,7 @@ export default function Header() {
 
     return (
         <header
-            className={`sticky top-0 z-50 w-full backdrop-blur transition-all duration-300
+            className={`sticky top-0 z-50 w-full backdrop-blur transition-all duration-300 shadow-md
     ${menuOpen ? "border-b border-border" : "border-b border-transparent"}`}
         >
             <nav className="flex items-center justify-between px-6 py-4">
