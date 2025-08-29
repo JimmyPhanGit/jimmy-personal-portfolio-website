@@ -35,12 +35,14 @@ export default function Header() {
     }
 
     return (
-        <header className="sticky top-0 z-50 w-full backdrop-blur bg-background/70 border-b border-border">
+        <header
+            className={`sticky top-0 z-50 w-full backdrop-blur transition-all duration-300
+    ${menuOpen ? "border-b border-border" : "border-b border-transparent"}`}
+        >
             <nav className="flex items-center justify-between px-6 py-4">
                 {/* Logo */}
-                <div className="text-xl font-bold cursor-pointer select-none">Jimmy Phan</div>
+                <div className="text-xl font-bold cursor-pointer select-none text-white">Jimmy Phan</div>
 
-                {/* Desktop navigation */}
                 <div className="hidden md:flex gap-8">
                     {sections.map(({ id, label }) => (
                         <Button
@@ -48,31 +50,43 @@ export default function Header() {
                             variant="ghost"
                             onClick={() => handleClick(id)}
                             className={`relative px-2 py-1 text-sm font-medium transition-transform duration-200
-                ${active === id ? "text-primary scale-105" : "text-muted-foreground scale-100"}
-                hover:text-primary hover:scale-100 cursor-pointer`}
+                text-white
+                cursor-pointer
+                hover:bg-transparent
+                hover:text-white
+                hover:scale-105`}
                         >
                             {label}
                             {active === id && (
-                                <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-primary rounded" />
+                                <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-white rounded" />
                             )}
                         </Button>
                     ))}
+
+                    {/* Resume button */}
+                    <Button
+                        variant="default"
+                        className="px-4 py-1 text-sm text-white border border-white rounded transition-colors duration-200"
+                        onClick={() => window.open("/resume.pdf", "_blank")}
+                    >
+                        Resume
+                    </Button>
                 </div>
 
                 {/* Mobile hamburger button */}
                 <button
-                    className="md:hidden text-2xl focus:outline-none cursor-pointer"
+                    className="md:hidden text-2xl focus:outline-none cursor-pointer text-white"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     {menuOpen ? <FiX /> : <FiMenu />}
                 </button>
             </nav>
 
-            {/* Mobile menu */}
+            {/* Mobile navigation */}
             <div
-                className={`md:hidden flex flex-col gap-4 px-6 pb-4 bg-background/90 border-t border-border
-    transform transition-all duration-300 ease-in-out
-    ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
+                className={`md:hidden flex flex-col gap-4 px-6 pb-4 border-border
+        transform transition-all duration-300 ease-in-out
+        ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
             >
                 {sections.map(({ id, label }) => (
                     <Button
@@ -80,10 +94,16 @@ export default function Header() {
                         variant="ghost"
                         onClick={() => handleClick(id)}
                         className={`relative px-2 py-2 text-left text-sm font-medium transition-transform duration-200
-        ${active === id ? "text-primary scale-105" : "text-muted-foreground scale-100"}
-        hover:text-primary hover:scale-100 cursor-pointer`}
+                text-white
+                cursor-pointer
+                hover:bg-transparent
+                hover:text-white
+                hover:scale-105`}
                     >
                         {label}
+                        {active === id && (
+                            <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-white rounded" />
+                        )}
                     </Button>
                 ))}
             </div>
