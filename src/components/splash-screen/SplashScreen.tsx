@@ -1,4 +1,3 @@
-// components/SplashScreen.tsx
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,10 +13,11 @@ const SplashScreen = () => {
         <AnimatePresence>
             {show && (
                 <motion.div
-                    className="fixed inset-0 flex items-center justify-center bg-gray-900 z-50"
-                    initial={{ opacity: 1 }}
+                    className="fixed inset-0 flex items-center justify-center z-50"
+                    initial={{ opacity: 1, backgroundColor: "#1e2a4d" }}
+                    animate={{ backgroundColor: "#18181b" }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
                 >
                     <div className="relative w-24 h-24 flex items-center justify-center">
                         {/* Bottom border */}
