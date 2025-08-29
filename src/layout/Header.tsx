@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
+import { FiMenu, FiX } from "react-icons/fi"
 
 const sections = [
     { id: "about-me", label: "01. About Me" },
@@ -10,6 +11,7 @@ const sections = [
 
 export default function Header() {
     const [active, setActive] = useState("about-me")
+    const [menuOpen, setMenuOpen] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,16 +31,17 @@ export default function Header() {
     const handleClick = (id: string) => {
         const el = document.getElementById(id)
         if (el) el.scrollIntoView({ behavior: "smooth" })
+        setMenuOpen(false) // Close menu on link click
     }
 
     return (
         <header className="sticky top-0 z-50 w-full backdrop-blur bg-background/70 border-b border-border">
             <nav className="flex items-center justify-between px-6 py-4">
-                <div className="text-xl font-bold cursor-pointer select-none">
-                    Jimmy Phan
-                </div>
+                {/* Logo */}
+                <div className="text-xl font-bold cursor-pointer select-none">Jimmy Phan</div>
 
-                <div className="flex gap-8">
+                {/* Desktop navigation */}
+                <div className="hidden md:flex gap-8">
                     {sections.map(({ id, label }) => (
                         <Button
                             key={id}
@@ -55,7 +58,33 @@ export default function Header() {
                         </Button>
                     ))}
                 </div>
+
+                {/* Mobile hamburger button */}
+                <button
+                    className="md:hidden text-2xl focus:outline-none"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    {menuOpen ? <FiX /> : <FiMenu />}
+                </button>
             </nav>
+
+            {/* Mobile menu */}
+            {menuOpen && (
+                <div className="md:hidden flex flex-col gap-4 px-6 pb-4 bg-background/90 border-t border-border">
+                    {sections.map(({ id, label }) => (
+                        <Button
+                            key={id}
+                            variant="ghost"
+                            onClick={() => handleClick(id)}
+                            className={`relative px-2 py-2 text-left text-sm font-medium transition-transform duration-200
+                ${active === id ? "text-primary scale-105" : "text-muted-foreground scale-100"}
+                hover:text-primary hover:scale-100 cursor-pointer`}
+                        >
+                            {label}
+                        </Button>
+                    ))}
+                </div>
+            )}
         </header>
     )
 }
