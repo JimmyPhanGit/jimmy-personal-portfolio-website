@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
+import { motion } from "framer-motion"
 
 const sections = [
     { id: "about-me", label: "01. About Me" },
@@ -41,8 +42,18 @@ export default function Header() {
         >
             <nav className="flex items-center justify-between px-6 py-4">
                 {/* Logo */}
-                <div className="text-xl font-bold cursor-pointer select-none text-white">Jimmy Phan</div>
-
+                <motion.div className="text-xl font-bold cursor-pointer select-none text-white relative inline-block">
+                    Jimmy Phan
+                    <motion.span
+                        className="absolute left-0 bottom-0 h-[2px] bg-white w-full"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        style={{ transformOrigin: "left" }}
+                        transition={{
+                            duration: 1.5,
+                        }}
+                    />
+                </motion.div>
                 <div className="hidden md:flex gap-8">
                     {sections.map(({ id, label }) => (
                         <Button
