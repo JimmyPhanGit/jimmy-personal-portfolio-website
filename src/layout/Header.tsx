@@ -31,7 +31,7 @@ export default function Header() {
     const handleClick = (id: string) => {
         const el = document.getElementById(id)
         if (el) el.scrollIntoView({ behavior: "smooth" })
-        setMenuOpen(false) // Close menu on link click
+        setMenuOpen(false)
     }
 
     return (
@@ -61,7 +61,7 @@ export default function Header() {
 
                 {/* Mobile hamburger button */}
                 <button
-                    className="md:hidden text-2xl focus:outline-none"
+                    className="md:hidden text-2xl focus:outline-none cursor-pointer"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     {menuOpen ? <FiX /> : <FiMenu />}
@@ -69,22 +69,24 @@ export default function Header() {
             </nav>
 
             {/* Mobile menu */}
-            {menuOpen && (
-                <div className="md:hidden flex flex-col gap-4 px-6 pb-4 bg-background/90 border-t border-border">
-                    {sections.map(({ id, label }) => (
-                        <Button
-                            key={id}
-                            variant="ghost"
-                            onClick={() => handleClick(id)}
-                            className={`relative px-2 py-2 text-left text-sm font-medium transition-transform duration-200
-                ${active === id ? "text-primary scale-105" : "text-muted-foreground scale-100"}
-                hover:text-primary hover:scale-100 cursor-pointer`}
-                        >
-                            {label}
-                        </Button>
-                    ))}
-                </div>
-            )}
+            <div
+                className={`md:hidden flex flex-col gap-4 px-6 pb-4 bg-background/90 border-t border-border
+    transform transition-all duration-300 ease-in-out
+    ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
+            >
+                {sections.map(({ id, label }) => (
+                    <Button
+                        key={id}
+                        variant="ghost"
+                        onClick={() => handleClick(id)}
+                        className={`relative px-2 py-2 text-left text-sm font-medium transition-transform duration-200
+        ${active === id ? "text-primary scale-105" : "text-muted-foreground scale-100"}
+        hover:text-primary hover:scale-100 cursor-pointer`}
+                    >
+                        {label}
+                    </Button>
+                ))}
+            </div>
         </header>
     )
 }
