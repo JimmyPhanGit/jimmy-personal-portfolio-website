@@ -69,7 +69,10 @@ export default function Header() {
                         >
                             {label}
                             {active === id && (
-                                <span className="absolute left-0 right-0 -bottom-1 h-0.5 bg-white rounded" />
+                                <motion.span
+                                    layoutId="header-underline"
+                                    className="absolute left-0 right-0 -bottom-1 h-0.5 bg-white rounded"
+                                />
                             )}
                         </Button>
                     ))}
