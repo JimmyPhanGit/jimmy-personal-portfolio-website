@@ -78,13 +78,14 @@ export default function Header() {
                     ))}
 
                     {/* Resume button */}
-                    <Button
-                        variant="default"
-                        className="px-4 py-1 text-sm text-white border border-white rounded transition-colors duration-200"
+                    <motion.button
+                        className="px-4 py-1 text-sm text-white border border-white rounded cursor-pointer"
                         onClick={() => window.open("/resume.pdf", "_blank")}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     >
                         Resume
-                    </Button>
+                    </motion.button>
                 </div>
 
                 {/* Mobile hamburger button */}
