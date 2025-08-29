@@ -5,7 +5,14 @@ const SplashScreen = () => {
     const [show, setShow] = useState(true);
 
     useEffect(() => {
-        const timer = setTimeout(() => setShow(false), 1500);
+        const borderDuration = 1500; // border animation time
+        const displayTime = 500;    // extra time to keep square + J visible
+        const fadeDuration = 500;    // fade-out time
+
+        const totalDuration = borderDuration + displayTime + fadeDuration;
+
+        const timer = setTimeout(() => setShow(false), totalDuration);
+
         return () => clearTimeout(timer);
     }, []);
 
@@ -17,7 +24,7 @@ const SplashScreen = () => {
                     initial={{ opacity: 1, backgroundColor: "#1e2a4d" }}
                     animate={{ backgroundColor: "#18181b" }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    transition={{ backgroundColor: { duration: 1.5 }, opacity: { duration: 0.5 } }}
                 >
                     <div className="relative w-24 h-24 flex items-center justify-center">
                         {/* Bottom border */}
