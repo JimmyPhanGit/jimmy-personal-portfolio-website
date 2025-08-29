@@ -124,6 +124,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 .full-section {
   min-height: 100vh;
   display: flex;
