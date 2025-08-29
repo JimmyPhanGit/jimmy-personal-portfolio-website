@@ -1,21 +1,25 @@
 import './App.css'
-import Header from './components/Header'
+import Header from './components/sections/Header'
 
 function App() {
   return (
     <>
       <Header />
-      <section className="full-section section-1">
-        <h1>Section 1</h1>
+      <section id="about" className="full-section">
+        <h1>About Me</h1>
       </section>
-      <section className="full-section section-2">
-        <h1>Section 2</h1>
+      <section id="work" className="full-section">
+        <h1>Work Experience</h1>
       </section>
-      <section className="full-section section-3">
-        <h1>Section 3</h1>
+      <section id="projects" className="full-section">
+        <h1>Projects</h1>
+      </section>
+      <section id="contact" className="full-section">
+        <h1>Contact</h1>
       </section>
     </>
   )
 }
+
 
 export default App
