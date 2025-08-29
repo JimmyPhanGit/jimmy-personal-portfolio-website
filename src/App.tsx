@@ -1,20 +1,32 @@
-import './App.css'
-import Header from './components/Header'
+import { useState, useEffect } from "react"
+import Header from './layout/Header'
+import { About, Work, Projects, Contact } from './components/sections'
+import SplashScreen from './components/splash-screen/SplashScreen'
 
 function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1800)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <>
-      <Header />
-      <section className="full-section section-1">
-        <h1>Section 1</h1>
-      </section>
-      <section className="full-section section-2">
-        <h1>Section 2</h1>
-      </section>
-      <section className="full-section section-3">
-        <h1>Section 3</h1>
-      </section>
-    </>
+    <div className="min-h-screen bg-[#18181b] text-white relative">
+      {/* Splash screen always visible while loading */}
+      {loading && <SplashScreen />}
+
+      {/* Entire site hidden until loading is done */}
+      {!loading && (
+        <div className="transition-opacity duration-500 opacity-100">
+          <Header />
+          <About />
+          <Work />
+          <Projects />
+          <Contact />
+        </div>
+      )}
+    </div>
   )
 }
 
