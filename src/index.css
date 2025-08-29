@@ -130,13 +130,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-.full-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 html::-webkit-scrollbar {
   width: 8px;
 }
