@@ -12,13 +12,10 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#18181b] text-white relative">
-      {/* Splash screen always visible while loading */}
+    <>
       {loading && <SplashScreen />}
-
-      {/* Entire site hidden until loading is done */}
       {!loading && (
-        <div className="transition-opacity duration-500 opacity-100">
+        <div className="bg-[#18181b] text-white transition-opacity duration-500 opacity-100">
           <Header />
           <About />
           <Work />
@@ -26,7 +23,7 @@ function App() {
           <Contact />
         </div>
       )}
-    </div>
+    </>
   )
 }
 
