@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import Header from './layout/Header'
-import { About, Work, Projects, Contact } from './components/sections'
+import { Hero, About, Work, Projects, Contact } from './components/sections'
 import SplashScreen from './components/splash-screen/SplashScreen'
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
       {!loading && (
         <div className="transition-opacity duration-500 opacity-100">
           <Header />
+          <Hero />
           <About />
           <Work />
           <Projects />
