@@ -1,5 +1,4 @@
 import { type Variants, motion } from "framer-motion"
-import mugshot from "@/images/mugshot.jpg"
 
 export default function Hero() {
     const container: Variants = {
@@ -73,18 +72,6 @@ export default function Hero() {
                         </motion.button>
                     </motion.div>
                 </div>
-                <motion.div
-                    variants={item}
-                    className="hidden md:flex-shrink-0 md:mx-0 md:mt-12 md:flex"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 150, damping: 10 }}
-                >
-                    <img
-                        src={mugshot}
-                        alt="Jimmy Phan Picture"
-                        className="w-80 h-80 object-cover"
-                    />
-                </motion.div>
             </motion.div>
         </section>
     )
