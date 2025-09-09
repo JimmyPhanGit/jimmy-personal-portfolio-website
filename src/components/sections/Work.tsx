@@ -2,6 +2,8 @@ import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
+
 
 const experiences = [
     {
@@ -46,7 +48,7 @@ const experiences = [
 
 export default function Work() {
     const [currentSlide, setCurrentSlide] = useState(0)
-    const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
         slides: { perView: 3, spacing: 16, origin: "center" },
         breakpoints: {
             "(max-width: 900px)": {
@@ -64,6 +66,10 @@ export default function Work() {
         },
     })
 
+    // Arrow handlers
+    const prevSlide = () => slider.current?.prev()
+    const nextSlide = () => slider.current?.next()
+
     return (
         <section
             id="work"
@@ -72,6 +78,7 @@ export default function Work() {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
                 <span className="text-[#22d3ee]">02.</span> Work Experience
             </h2>
+            {/* Fade overlays */}
             <div
                 className="pointer-events-none absolute left-0 top-0 h-full w-32 z-20 hidden md:block"
                 style={{ background: "linear-gradient(to right, #18181b 60%, transparent 100%)" }}
@@ -80,6 +87,24 @@ export default function Work() {
                 className="pointer-events-none absolute right-0 top-0 h-full w-32 z-20 hidden md:block"
                 style={{ background: "linear-gradient(to left, #18181b 60%, transparent 100%)" }}
             />
+
+            {/* Mobile arrows */}
+            <div className="flex justify-between items-center w-full max-w-7xl absolute top-1/2 left-0 z-30 px-2 md:hidden">
+                <button
+                    aria-label="Previous"
+                    onClick={prevSlide}
+                    className="bg-[#18181b] rounded-full p-2 shadow-lg border border-white/10 text-white"
+                >
+                    <FiChevronLeft size={28} />
+                </button>
+                <button
+                    aria-label="Next"
+                    onClick={nextSlide}
+                    className="bg-[#18181b] rounded-full p-2 shadow-lg border border-white/10 text-white"
+                >
+                    <FiChevronRight size={28} />
+                </button>
+            </div>
 
             <div ref={sliderRef} className="keen-slider w-full max-w-7xl relative z-10">
                 {experiences.map((exp, idx) => {
