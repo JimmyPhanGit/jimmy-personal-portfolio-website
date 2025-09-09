@@ -12,8 +12,6 @@ const experiences = [
             "Developed a full-stack web application to manage leads, improving lead tracking and assignment, boosting lead engagement by 23% and increasing conversion rate by 28% across multiple departments",
             "Built a full-stack web application to manage personal trainers, performance tracking, and resource allocation, providing visibility for over 200 trainers for the first time and reducing manual administrative work by 40%",
             "Led a digital initiative for referral web leads, gathering requirements and building an online referral program that simplified member referrals, boosting engagement by 300% per month across all clubs.",
-            "Resolved workflow-related support tickets efficiently, maintaining data compliance within a sensitive enterprise-level database",
-            "Initiated front-end development for a management service, enabling seamless updates to user information that automatically reflected on the public site",
             "Technologies and frameworks: HTML, CSS, JS, React, .NET, C#, Azure, GitHub, Postman, Python, Figma, Java",
         ],
         icon: "/images/goodlife_fitness_logo.jpg",
@@ -27,7 +25,6 @@ const experiences = [
             "Built a microservice and workflow to capture online leads, integrated with Salesforce and Microsoft Dynamics CRM to increase daily online lead capture",
             "Developed an internal CASL compliance tool to let associates quickly verify if contacts can be contacted",
             "Created a Python automation repository to streamline CRM operations, including backfilling data during outages and automating diagnostics to maintain critical records",
-            "Gathered requirements and implemented end-to-end solutions for online lead management and compliance tools, collaborating with multiple teams to ensure smooth integration and operational efficiency",
             "Technologies and frameworks: HTML, CSS, JS, React, .NET, C#, Azure, GitHub, Snowflake, Python, Figma",
         ],
         icon: "/images/goodlife_fitness_logo.jpg",
@@ -97,17 +94,6 @@ export default function Work() {
                                 className={`relative w-full max-w-lg rounded-xl shadow-lg overflow-hidden transition-all duration-500 ease-out
                     ${isActive ? "scale-100 opacity-100 shadow-2xl shadow-cyan-500/20" : isAdjacent ? "scale-90 opacity-60" : "scale-75 opacity-30"}
                   `}
-                                animate={isActive ? {
-                                    rotateY: [-8, 8, -8],
-                                    rotateX: [-2, 2, -2],
-                                    scale: [1, 1.02, 1]
-                                } : {}}
-                                transition={isActive ? {
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    times: [0, 0.5, 1]
-                                } : {}}
                             >
                                 {/* Holographic shimmer overlay for active card */}
                                 {idx === currentSlide && (
