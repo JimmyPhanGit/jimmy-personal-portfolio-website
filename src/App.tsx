@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import Header from './layout/Header'
-import { Hero, About, Work, Projects, Contact } from './components/sections'
+import { Hero, About, Work, Projects } from './components/sections'
 import SplashScreen from './components/splash-screen/SplashScreen'
 
 function App() {
@@ -24,7 +24,6 @@ function App() {
           <About />
           <Work />
           <Projects />
-          <Contact />
         </div>
       )}
     </div>

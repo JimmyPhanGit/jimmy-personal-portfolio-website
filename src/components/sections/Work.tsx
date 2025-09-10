@@ -2,6 +2,8 @@ import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
+
 
 const experiences = [
     {
@@ -12,8 +14,6 @@ const experiences = [
             "Developed a full-stack web application to manage leads, improving lead tracking and assignment, boosting lead engagement by 23% and increasing conversion rate by 28% across multiple departments",
             "Built a full-stack web application to manage personal trainers, performance tracking, and resource allocation, providing visibility for over 200 trainers for the first time and reducing manual administrative work by 40%",
             "Led a digital initiative for referral web leads, gathering requirements and building an online referral program that simplified member referrals, boosting engagement by 300% per month across all clubs.",
-            "Resolved workflow-related support tickets efficiently, maintaining data compliance within a sensitive enterprise-level database",
-            "Initiated front-end development for a management service, enabling seamless updates to user information that automatically reflected on the public site",
             "Technologies and frameworks: HTML, CSS, JS, React, .NET, C#, Azure, GitHub, Postman, Python, Figma, Java",
         ],
         icon: "/images/goodlife_fitness_logo.jpg",
@@ -27,7 +27,6 @@ const experiences = [
             "Built a microservice and workflow to capture online leads, integrated with Salesforce and Microsoft Dynamics CRM to increase daily online lead capture",
             "Developed an internal CASL compliance tool to let associates quickly verify if contacts can be contacted",
             "Created a Python automation repository to streamline CRM operations, including backfilling data during outages and automating diagnostics to maintain critical records",
-            "Gathered requirements and implemented end-to-end solutions for online lead management and compliance tools, collaborating with multiple teams to ensure smooth integration and operational efficiency",
             "Technologies and frameworks: HTML, CSS, JS, React, .NET, C#, Azure, GitHub, Snowflake, Python, Figma",
         ],
         icon: "/images/goodlife_fitness_logo.jpg",
@@ -49,7 +48,7 @@ const experiences = [
 
 export default function Work() {
     const [currentSlide, setCurrentSlide] = useState(0)
-    const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
         slides: { perView: 3, spacing: 16, origin: "center" },
         breakpoints: {
             "(max-width: 900px)": {
@@ -67,6 +66,10 @@ export default function Work() {
         },
     })
 
+    // Arrow handlers
+    const prevSlide = () => slider.current?.prev()
+    const nextSlide = () => slider.current?.next()
+
     return (
         <section
             id="work"
@@ -75,6 +78,7 @@ export default function Work() {
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
                 <span className="text-[#22d3ee]">02.</span> Work Experience
             </h2>
+            {/* Fade overlays */}
             <div
                 className="pointer-events-none absolute left-0 top-0 h-full w-32 z-20 hidden md:block"
                 style={{ background: "linear-gradient(to right, #18181b 60%, transparent 100%)" }}
@@ -83,6 +87,24 @@ export default function Work() {
                 className="pointer-events-none absolute right-0 top-0 h-full w-32 z-20 hidden md:block"
                 style={{ background: "linear-gradient(to left, #18181b 60%, transparent 100%)" }}
             />
+
+            {/* Mobile arrows */}
+            <div className="flex justify-between items-center w-full max-w-7xl absolute top-1/2 left-0 z-30 px-2 md:hidden">
+                <button
+                    aria-label="Previous"
+                    onClick={prevSlide}
+                    className="bg-[#18181b] rounded-full p-2 shadow-lg border border-white/10 text-white"
+                >
+                    <FiChevronLeft size={28} />
+                </button>
+                <button
+                    aria-label="Next"
+                    onClick={nextSlide}
+                    className="bg-[#18181b] rounded-full p-2 shadow-lg border border-white/10 text-white"
+                >
+                    <FiChevronRight size={28} />
+                </button>
+            </div>
 
             <div ref={sliderRef} className="keen-slider w-full max-w-7xl relative z-10">
                 {experiences.map((exp, idx) => {
@@ -97,17 +119,6 @@ export default function Work() {
                                 className={`relative w-full max-w-lg rounded-xl shadow-lg overflow-hidden transition-all duration-500 ease-out
                     ${isActive ? "scale-100 opacity-100 shadow-2xl shadow-cyan-500/20" : isAdjacent ? "scale-90 opacity-60" : "scale-75 opacity-30"}
                   `}
-                                animate={isActive ? {
-                                    rotateY: [-8, 8, -8],
-                                    rotateX: [-2, 2, -2],
-                                    scale: [1, 1.02, 1]
-                                } : {}}
-                                transition={isActive ? {
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                    times: [0, 0.5, 1]
-                                } : {}}
                             >
                                 {/* Holographic shimmer overlay for active card */}
                                 {idx === currentSlide && (
