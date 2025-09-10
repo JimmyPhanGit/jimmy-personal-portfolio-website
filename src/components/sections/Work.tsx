@@ -75,7 +75,7 @@ export default function Work() {
             id="work"
             className="flex flex-col justify-center items-center min-h-screen bg-[#18181b] text-white px-6 relative"
         >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 mt-2">
                 <span className="text-[#22d3ee]">02.</span> Work Experience
             </h2>
             {/* Fade overlays */}
