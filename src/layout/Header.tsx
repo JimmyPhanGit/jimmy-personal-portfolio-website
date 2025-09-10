@@ -8,7 +8,6 @@ const sections = [
     { id: "about-me", label: "01. About Me" },
     { id: "work", label: "02. Work Experience" },
     { id: "projects", label: "03. Projects" },
-    { id: "contact", label: "04. Contact" },
 ];
 
 export default function Header() {
