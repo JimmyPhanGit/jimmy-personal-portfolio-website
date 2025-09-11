@@ -76,7 +76,7 @@ export default function Projects() {
             id="projects"
             className="flex flex-col justify-center items-center min-h-screen bg-[#18181b] text-white px-6"
         >
-            <h1 className="text-3xl font-bold mb-10">
+            <h1 className="text-3xl font-bold mb-8 mt-2 md:mt-0">
                 <span className="text-[#22d3ee]">03.</span> Projects
             </h1>
             <motion.div
