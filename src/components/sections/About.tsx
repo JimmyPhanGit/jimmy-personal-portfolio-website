@@ -1,5 +1,4 @@
 import { type Variants, motion } from "framer-motion"
-import mugshot from "@/images/mugshot.jpg"
 
 export default function About() {
     const container: Variants = {
@@ -18,71 +17,40 @@ export default function About() {
     return (
         <section
             id="about-me"
-            className="flex flex-col justify-center items-start min-h-screen bg-[#18181b] text-white px-6"
+            className="flex flex-col justify-center items-center min-h-screen bg-[#18181b] text-white px-6 md:px-20"
         >
             <motion.div
-                className="w-full px-6 md:max-w-5xl md:mx-auto flex flex-col md:flex-row items-start md:items-center gap-8"
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl"
                 variants={container}
                 initial="hidden"
-                animate="show"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
             >
-                <div className="flex-1">
-                    <motion.p variants={item} className="text-base text-gray-400 mb-4">
-                        Hello world! My name is
+                <motion.div variants={item}>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-6">
+                        <span className="text-[#22d3ee]">01.</span> About Me
+                    </h2>
+                    <motion.p variants={item} className="mb-4 text-gray-300">
+                        Hello! My name is Jimmy, and I create cool things on the internet. Technology has become a
+                        pivotal part of our lives, influencing everything from how we connect
+                        with others to how we think and work. I started coding from curosity of
+                        learning how things are built and software development quickly became a passion of mine.
                     </motion.p>
-
-                    <motion.h1 variants={item} className="text-5xl md:text-6xl font-bold mb-2">
-                        Jimmy Phan
-                    </motion.h1>
-
-                    <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold text-[#e5e5d3] mb-6">
-                        I solve problems with code
-                    </motion.h2>
-
-                    <motion.p variants={item} className="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
-                        I'm a software developer who transforms real-world challenges into elegant, practical solutions.
-                        Currently, I'm focused on developing meaningful digital experiences at{" "}
-                        <motion.a
-                            href="https://www.goodlifefitness.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="relative font-bold text-white cursor-pointer inline-block"
-                            initial="rest"
-                            whileHover="hover"
-                        >
-                            GoodLife Fitness
-                            <motion.span
-                                className="absolute left-0 bottom-0 h-[2px] bg-white w-full origin-left"
-                                variants={{
-                                    rest: { scaleX: 0 },
-                                    hover: { scaleX: 1 },
-                                }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                            />
-                        </motion.a>
-                        .
+                    <motion.p variants={item} className="mb-4 text-gray-300">
+                        I'm currently focused on React, TypeScript, and .NET, but
+                        I've also worked with Python, Node.js, and. My passion lies in
+                        creating tools that make people's lives easier.
                     </motion.p>
-                    <motion.div variants={item} className="flex flex-wrap gap-4 mx-auto pt-8">
-                        <motion.button
-                            className="px-6 py-3 bg-[#e5e5d3] text-black font-semibold rounded-md cursor-pointer"
-                            onClick={() => window.open("/resume.pdf", "_blank")}
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                        >
-                            View Resume
-                        </motion.button>
-                    </motion.div>
-                </div>
+                </motion.div>
+
                 <motion.div
+                    className="flex justify-center md:justify-end"
                     variants={item}
-                    className="flex-shrink-0 mx-auto md:mx-0"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 150, damping: 10 }}
                 >
                     <img
-                        src={mugshot}
-                        alt="Jimmy Phan Picture"
-                        className="w-80 h-80 object-cover"
+                        src="/images/mugshot.jpg"
+                        alt="Profile picture"
+                        className="rounded-lg shadow-lg max-w-xs md:max-w-sm"
                     />
                 </motion.div>
             </motion.div>
