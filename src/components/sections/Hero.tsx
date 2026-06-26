@@ -1,6 +1,10 @@
 import { type Variants, motion } from "framer-motion"
 
+const CAREER_START_YEAR = 2023
+
 export default function Hero() {
+    const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR
+
     const container: Variants = {
         hidden: { opacity: 0 },
         show: {
@@ -39,7 +43,7 @@ export default function Hero() {
                     </motion.h2>
 
                     <motion.p variants={item} className="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
-                    Focused on turning complex business problems into scalable product solutions. My experience spans CRM modernization, 
+                    With {yearsOfExperience} years of experience, I'm focused on turning complex business problems into scalable product solutions. My experience spans CRM modernization, 
                     AI-powered tools, workflow automation, mobile app integrations, and lead-management systems. 
                     I bring a blend of product thinking, technical fluency, and execution experience to teams building technology-driven products.
                     </motion.p>

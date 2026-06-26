@@ -31,15 +31,15 @@ export default function About() {
                         <span className="text-[#22d3ee]">01.</span> About Me
                     </h2>
                     <motion.p variants={item} className="mb-4 text-gray-300">
-                        Hello! My name is Jimmy, and I create cool things on the internet. Technology has become a
-                        pivotal part of our lives, influencing everything from how we connect
-                        with others to how we think and work. I started coding from curosity of
-                        learning how things are built and software development quickly became a passion of mine.
+                    Hello! My name is Jimmy, and I’ve always been curious about how and why things are built. 
+                    Technology has become a pivotal part of our lives, shaping how we connect, think, work, and make decisions.
+                    I began in software development, where I learned how to turn ideas into working solutions. But the deeper I got into building, 
+                    the more I found myself drawn to the product questions behind the work: understanding the problem, defining the user need, 
+                    and deciding what was worth building in the first place. That shift is what pulled me toward product management.
                     </motion.p>
                     <motion.p variants={item} className="mb-4 text-gray-300">
-                        I'm currently focused on React, TypeScript, and .NET, but
-                        I've also worked with Python, Node.js, and. My passion lies in
-                        creating tools that make people's lives easier.
+                    I ground myself in three pillars: lifelong learning, authenticity, and intentional contribution. 
+                    They shape how I approach my work, relationships, and the problems I choose to solve.
                     </motion.p>
                 </motion.div>
 
