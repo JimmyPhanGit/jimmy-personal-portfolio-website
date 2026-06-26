@@ -35,12 +35,18 @@ export default function Hero() {
                     </motion.h1>
 
                     <motion.h2 variants={item} className="text-4xl md:text-5xl font-bold text-[#e5e5d3] mb-6">
-                        I solve problems with code
+                        I am a technical Product Manager
                     </motion.h2>
 
                     <motion.p variants={item} className="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
-                        I'm a software developer who transforms real-world challenges into elegant, practical solutions.
-                        Currently, I'm focused on developing meaningful digital experiences at{" "}
+                    Focused on turning complex business problems into scalable product solutions. My experience spans CRM modernization, 
+                    AI-powered tools, workflow automation, mobile app integrations, and lead-management systems. 
+                    I bring a blend of product thinking, technical fluency, and execution experience to teams building technology-driven products.
+                    </motion.p>
+
+                    <br />
+                    <motion.p variants={item} className="text-base md:text-lg text-gray-300 max-w-xl leading-relaxed">
+                    Currently, I'm focused on developing meaningful digital experiences at{" "}
                         <motion.a
                             href="https://www.goodlifefitness.com/"
                             target="_blank"
@@ -64,7 +70,7 @@ export default function Hero() {
                     <motion.div variants={item} className="flex flex-wrap gap-4 mx-auto pt-8">
                         <motion.button
                             className="px-6 py-3 bg-[#e5e5d3] text-black font-semibold rounded-md cursor-pointer"
-                            onClick={() => window.open("/resume.pdf", "_blank")}
+                            onClick={() => window.open("/Jimmy_Phan_Resume.pdf", "_blank")}
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300, damping: 15 }}
                         >

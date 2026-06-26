@@ -86,7 +86,7 @@ export default function Header() {
                     {/* Resume button */}
                     <motion.button
                         className="px-4 py-1 text-sm text-white border border-white rounded cursor-pointer"
-                        onClick={() => window.open("/resume.pdf", "_blank")}
+                        onClick={() => window.open("/Jimmy_Phan_Resume.pdf", "_blank")}
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     >

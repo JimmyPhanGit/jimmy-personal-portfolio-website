@@ -8,13 +8,30 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 const experiences = [
     {
         company: "GoodLife Fitness",
-        role: "Software Developer",
-        period: "2024 - Present",
+        role: "Product Owner",
+        period: "2025 - Present",
         description: [
-            "Developed a full-stack web application to manage leads, improving lead tracking and assignment, boosting lead engagement by 23% and increasing conversion rate by 28% across multiple departments",
-            "Built a full-stack web application to manage personal trainers, performance tracking, and resource allocation, providing visibility for over 200 trainers for the first time and reducing manual administrative work by 40%",
-            "Led a digital initiative for referral web leads, gathering requirements and building an online referral program that simplified member referrals, boosting engagement by 300% per month across all clubs.",
-            "Technologies and frameworks: HTML, CSS, JS, React, .NET, C#, Azure, GitHub, Postman, Python, Figma, Java",
+            "Modernized a legacy club-management ecosystem into a centralized source-of-truth platform supporting all GoodLife clubs across Canada and consolidating legacy systems into one internal tool",
+            "Enhanced a member notification platform by defining requirements, designing category-based workflows, and launching mobile push notification capabilities for club-impact alerts",
+            "Launched an AI chatbot for B2B, B2C, and internal associate support, handling 40% of questions and tasks end-to-end before human escalation",
+            "Owned discovery and delivery of an AI-powered natural-language query solution using Copilot, enabling associates to retrieve club-management information without manually querying databases",
+            "Led software entitlement automation for onboarding, offboarding, and employee transfers, reducing access-related IT tickets by 85% across CRM, data, and Microsoft license workflows",
+            "Automated license and service provisioning across approximately 400 employee lifecycle events, improving access turnaround for customer-facing roles and reducing manual IT workload"
+        ],
+        icon: "/images/goodlife_fitness_logo.jpg",
+        color: "bg-[#ee3024]",
+    },
+    {
+        company: "GoodLife Fitness",
+        role: "Software Developer",
+        period: "2024 - 2025",
+        description: [
+            "Led CRM cost-optimization initiatives that reduced annual expenses by approximately $600K USD / 45%, by replacing license-dependent processes with custom microservices and internal workflows",
+            "Led discovery and delivery of an online referral program that replaced paper-based and word-of-mouth referrals with QR code submissions integrated directly into CRM workflows",
+            "Pitched the referral program to stakeholders, secured approval, and supported a successful pilot that expanded into a Canada-wide rollout",
+            "Launched a digital lead-capture initiative for grand openings and events, enabling sales teams to collect attendee leads and follow up through automated text messaging",
+            "Prototyped a custom full-stack lead-management app to replace the existing CRM with workflows tailored to lead tracking, ownership, and assignment needs",
+            "Technologies and frameworks: JavaScript, React, .NET, C#, Azure, GitHub, Postman, Python, Figma, Java"
         ],
         icon: "/images/goodlife_fitness_logo.jpg",
         color: "bg-[#ee3024]",
@@ -24,10 +41,10 @@ const experiences = [
         role: "Software Developer (Co-Op)",
         period: "2023 - 2024",
         description: [
-            "Built a microservice and workflow to capture online leads, integrated with Salesforce and Microsoft Dynamics CRM to increase daily online lead capture",
-            "Developed an internal CASL compliance tool to let associates quickly verify if contacts can be contacted",
-            "Created a Python automation repository to streamline CRM operations, including backfilling data during outages and automating diagnostics to maintain critical records",
-            "Technologies and frameworks: HTML, CSS, JS, React, .NET, C#, Azure, GitHub, Snowflake, Python, Figma",
+            "Delivered an online lead-capture solution that eliminated an 85% lead loss rate, increasing online lead retention to 100% and improving lead data quality for downstream sales and marketing teams",
+            "Built an internal CASL compliance tool to help associates verify contact eligibility, improving outreach efficiency while reducing regulatory risk",
+            "Partnered with B2B, B2C, and E-commerce stakeholders to gather requirements and improve Salesforce workflows across lead management and compliance processes",
+            "Technologies and frameworks: JavaScript, React, .NET, C#, Azure, GitHub, Snowflake, Python, Figma",
         ],
         icon: "/images/goodlife_fitness_logo.jpg",
         color: "bg-[#ee3024]",
