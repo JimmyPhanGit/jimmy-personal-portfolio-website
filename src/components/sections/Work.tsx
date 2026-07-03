@@ -11,10 +11,9 @@ const experiences = [
         role: "Product Owner",
         period: "2025 - Present",
         description: [
-            "Modernized a legacy club-management ecosystem into a centralized source-of-truth platform supporting all GoodLife clubs across Canada and consolidating legacy systems into one internal tool",
-            "Enhanced a member notification platform by defining requirements, designing category-based workflows, and launching mobile push notification capabilities for club-impact alerts",
-            "Launched an AI chatbot for B2B, B2C, and internal associate support, handling 40% of questions and tasks end-to-end before human escalation",
-            "Owned discovery and delivery of an AI-powered natural-language query solution using Copilot, enabling associates to retrieve club-management information without manually querying databases",
+            "Led product modernization of a legacy location-management ecosystem by consolidating 4 fragmented tools into one source-of-truth platform, improving operational consistency across all locations nationwide",
+            "Defined requirements and launched category-based mobile push notifications, enabling all gyms to notify members of disruptions 60% faster through standardized communication workflows",
+            "Owned discovery and delivery of an AI-powered natural-language query product, reducing manual database lookup requests by 85% and enabling all associates to access gym-management information through natural-language prompts",
             "Led software entitlement automation for onboarding, offboarding, and employee transfers, reducing access-related IT tickets by 85% across CRM, data, and Microsoft license workflows",
             "Automated license and service provisioning across approximately 400 employee lifecycle events, improving access turnaround for customer-facing roles and reducing manual IT workload"
         ],
@@ -26,11 +25,11 @@ const experiences = [
         role: "Software Developer",
         period: "2024 - 2025",
         description: [
-            "Led CRM cost-optimization initiatives that reduced annual expenses by approximately $600K USD / 45%, by replacing license-dependent processes with custom microservices and internal workflows",
-            "Led discovery and delivery of an online referral program that replaced paper-based and word-of-mouth referrals with QR code submissions integrated directly into CRM workflows",
-            "Pitched the referral program to stakeholders, secured approval, and supported a successful pilot that expanded into a Canada-wide rollout",
-            "Launched a digital lead-capture initiative for grand openings and events, enabling sales teams to collect attendee leads and follow up through automated text messaging",
-            "Prototyped a custom full-stack lead-management app to replace the existing CRM with workflows tailored to lead tracking, ownership, and assignment needs",
+            "Led CRM cost-optimization initiatives that reduced annual expenses by approximately $600K USD / 45%, by replacing license-dependent processes with custom microservices and internal workflows.",
+            "Launched digital referral product that replaced paper-based referral workflows with QR code submissions, increasing referral capture by 85% and improving CRM visibility across all locations.",
+            "Built stakeholder alignment for a digital referral program by pitching the product opportunity, securing pilot approval, and supporting rollout from 4 pilot gyms to all gyms nationwide.",
+            "Launched a digital lead-capture product for grand openings and events, capturing 10K attendee leads across 12 events and reducing follow-up time by 90% through automated SMS workflows.",
+            "Prototyped and validated a custom lead-management product concept covering 7 core workflows, informing CRM replacement strategy for lead tracking, ownership, and assignment.",
             "Technologies and frameworks: JavaScript, React, .NET, C#, Azure, GitHub, Postman, Python, Figma, Java"
         ],
         icon: "/images/goodlife_fitness_logo.jpg",
@@ -42,7 +41,7 @@ const experiences = [
         period: "2023 - 2024",
         description: [
             "Delivered an online lead-capture solution that eliminated an 85% lead loss rate, increasing online lead retention to 100% and improving lead data quality for downstream sales and marketing teams",
-            "Built an internal CASL compliance tool to help associates verify contact eligibility, improving outreach efficiency while reducing regulatory risk",
+            "Delivered an internal CASL compliance product that reduced manual contact-verification time by 60%, improving outreach efficiency while reducing compliance risk for outreach teams",
             "Partnered with B2B, B2C, and E-commerce stakeholders to gather requirements and improve Salesforce workflows across lead management and compliance processes",
             "Technologies and frameworks: JavaScript, React, .NET, C#, Azure, GitHub, Snowflake, Python, Figma",
         ],
